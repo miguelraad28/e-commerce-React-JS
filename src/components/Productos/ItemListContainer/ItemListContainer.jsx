@@ -2,18 +2,19 @@ import {React, useState, useEffect} from 'react';
 import ItemList from './ItemList';
 import "./ItemListContainer.scss"
 import {products} from "../../products"
+import LoadingIcon from '../../LoadingIcon';
 
-function getProducts(confirmacion){
-    return new Promise((res, rej) => {
-        if(confirmacion){
-            res(products)
-        }else{
-            rej("Acceso denegado")
-        }
-    })
-}
 const ItemListContainer = () => {
-    const [productsList, setProductsList] = useState([]);
+    const getProducts = (confirmacion) => new Promise((res, rej) => {
+        setTimeout(() => {
+            if(confirmacion){
+                res(products)
+            }else{
+                rej("Acceso denegado")
+            }
+        }, 2000)
+    })
+    const [productsList, setProductsList] = useState();
     useEffect(() => {
         getProducts(true)
         .then(productsList => setProductsList(productsList))
@@ -22,7 +23,7 @@ const ItemListContainer = () => {
         <div className='contenedorProductos'>
             <h1>TIENDA ONLINE</h1>
             <div className='listaProductos'>
-                <ItemList productsList={productsList}/>
+                {productsList ? <ItemList productsList={productsList}/> : <LoadingIcon/>}
             </div>
         </div>
     );

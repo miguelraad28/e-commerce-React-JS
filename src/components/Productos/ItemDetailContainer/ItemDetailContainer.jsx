@@ -2,20 +2,22 @@ import {React, useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { products } from '../../products';
 import ItemDetail from './ItemDetail';
-import "./ItemDetailContainer.scss"
+import "./ItemDetailContainer.scss";
+import LoadingIcon from '../../LoadingIcon';
 
 
 const ItemDetailContainer = () => {
     const {id} = useParams()
-    const [item, setItem] = useState({});
-    const getProductDetail = () => new Promise((res, rej) => res(products.find(item => item.id === Number(id))))
+    const [item, setItem] = useState();
+    const getProductDetail = () => new Promise((res, rej) => {
+        setTimeout(()=> res(products.find(product => product.id === Number(id))), 2000)})
     useEffect(() => {
         getProductDetail()
         .then(response => setItem(response))
     }, []);
     return (
         <div className='contenedorItemDetail'>
-            <ItemDetail {...item}/>
+            {item ? <ItemDetail {...item}/> : <LoadingIcon/>}
         </div>
     );
 }
