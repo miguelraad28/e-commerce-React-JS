@@ -1,0 +1,38 @@
+.divBotonesAgregar{
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    max-width: 90%;
+    input, button{
+        text-align: center;
+        border: 1px solid pink;
+        background-color: white;
+        font-size: 1.1em;
+    }
+}
+.divBotonesAgregar input[type=number]::-webkit-inner-spin-button,
+.divBotonesAgregar input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+.botonAgregarAlCarrito{
+    grid-column: span 3;
+    margin-top: 8px;
+    border-radius: 8px;
+}
+.botonRestarProducto{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    transition: 0.2s;
+}
+.botonRestarProducto:active{
+    border-color: rgb(225, 42, 42);
+    background-color: rgb(225, 42, 42);
+}
+.botonSumarProducto{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: 0.2s;
+}
+.botonSumarProducto:active{
+    border-color: rgb(14, 197, 14);
+    background-color: rgb(14, 197, 14);
+}

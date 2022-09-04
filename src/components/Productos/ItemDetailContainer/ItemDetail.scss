@@ -1,24 +1,27 @@
 .itemDetailGrid{
     display: grid;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 450px);
     margin: 100px 0;
     gap: 35px;
+    border: 2px solid pink;
+    border-radius: 60px;
+    padding: 15px 15px;
     .divImg{
         display: flex;
         justify-content: flex-end;
         img{
-            max-width: 450px;
+            border: 1px solid gray;
+            max-width: 100%;
             border-radius: 50px;
-            transition: 0.8s;
+            transition: 0.5s;
             &:hover{
-                scale: 1.1;
+                scale: 1.03;
             }
         }
     }
     .divDetailsAndButton{
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
     }
     .divDetails{
         h2{
