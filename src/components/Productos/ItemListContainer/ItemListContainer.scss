@@ -1,0 +1,13 @@
+.contenedorProductos{
+    margin: 50px 10px;
+    h1{
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .listaProductos{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 10%));
+        gap: 1em;
+        justify-content: center;
+    }
+}

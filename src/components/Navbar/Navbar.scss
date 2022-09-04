@@ -1,0 +1,31 @@
+@import "./CartWidget.scss";
+nav{
+    position: sticky;
+    top: 0;
+    background-color: #ff98c4;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    ul{
+        margin: 0 auto;
+    }
+    .navbar-toggler{
+        border: none;
+    }
+    .navbar{
+        margin-right: -15px;
+    }
+}
+.color-submenu{
+    background-color: #ffc8e1;
+}
+.submenu{
+    border-radius: 0px;
+    animation-name: deploysubmenu;
+    animation-duration: 0.18s;
+}
+@keyframes deploysubmenu {
+    0%{
+        opacity: 0%;
+    }
+}

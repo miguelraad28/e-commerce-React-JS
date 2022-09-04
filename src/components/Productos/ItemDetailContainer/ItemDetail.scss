@@ -1,0 +1,35 @@
+.itemDetailGrid{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    margin: 100px 0;
+    gap: 35px;
+    .divImg{
+        display: flex;
+        justify-content: flex-end;
+        img{
+            max-width: 450px;
+            border-radius: 50px;
+            transition: 0.8s;
+            &:hover{
+                scale: 1.1;
+            }
+        }
+    }
+    .divDetailsAndButton{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .divDetails{
+        h2{
+            text-transform: uppercase;
+        }
+        p{
+            font-size: 1.5em;
+            margin-bottom: 0;
+        }
+        .itemDescripcion{
+            margin-bottom: 15px;
+        }
+    }
+}
