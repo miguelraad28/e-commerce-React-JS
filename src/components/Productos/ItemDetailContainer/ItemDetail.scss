@@ -1,14 +1,11 @@
 .itemDetailGrid{
     display: grid;
     grid-template-columns: repeat(2, 450px);
-    margin: 100px 0;
     gap: 35px;
     border: 2px solid pink;
     border-radius: 60px;
     padding: 15px 15px;
     .divImg{
-        display: flex;
-        justify-content: flex-end;
         img{
             border: 1px solid gray;
             max-width: 100%;
