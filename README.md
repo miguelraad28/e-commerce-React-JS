@@ -5,6 +5,7 @@ Proyecto e-commerce de práctica con fin educativo para comprender y manejar el 
 ## Librerías de React utilizadas
 
 react-toastify con el fin de mostrar alertas cuando el cliente queire añadir productos al carrito.
+
 react-router-dom con el fin de una óptima navegabilidad de la página entre componentes.
 
 Y dentro de componentes de React, useState, useEffect y useParams.
