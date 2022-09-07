@@ -6,8 +6,9 @@ import LoadingIcon from '../../LoadingIcon';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
-    const [titulo, setTitulo] = useState("");
     const {categoria} = useParams()
+    const [productsList, setProductsList] = useState();
+    const [titulo, setTitulo] = useState("");
     const getProducts = (confirmacion) => new Promise((res, rej) => {
         if(categoria){
             setProductsList()
@@ -32,7 +33,6 @@ const ItemListContainer = () => {
             }, 2000)
         }
     })
-    const [productsList, setProductsList] = useState();
     useEffect(() => {
         getProducts(true)
         .then(productsList => setProductsList(productsList))
