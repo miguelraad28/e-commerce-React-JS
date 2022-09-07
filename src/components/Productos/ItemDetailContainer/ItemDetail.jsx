@@ -31,7 +31,7 @@ const ItemDetail = ({id, nombre, descripcion, precioUnidad, stock, img}) => {
     return (
         <div className='itemDetailGrid' id={id}>
             <div className='divImg'>
-                <img src={`.${img}`}/>
+                <img src={img}/>
             </div>
             <div className='divDetailsAndButton'>
                 <div className='divDetails'>
@@ -40,17 +40,17 @@ const ItemDetail = ({id, nombre, descripcion, precioUnidad, stock, img}) => {
                     <p>Precio: ${precioUnidad}</p>
                     <p>Disponibles: {stock}</p>
                     <ItemCount stock={stock} onAdd={onAdd}/>
-                <ToastContainer
-                position="top-right"
-                autoClose={1700}
-                hideProgressBar
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                />
+                    <ToastContainer
+                    position="top-right"
+                    autoClose={1700}
+                    hideProgressBar
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    />
                 </div>
             </div>
         </div>

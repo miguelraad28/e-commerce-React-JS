@@ -1,7 +1,7 @@
 import {React, useState} from 'react';
 
 const UseItemCount = (stock) => {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(1)
     function sumar(){
         if(count < stock){
             setCount(count + 1)

@@ -2,7 +2,8 @@ import React from 'react';
 import "./Item.scss"
 import { Link } from 'react-router-dom';
 
-const Item = ({id, nombre, precioUnidad, stock, img}) => {
+const Item = ({producto}) => {
+    const {id, nombre, precioUnidad, stock, img} = producto
     return (
         <div className='item' id={id}>
             <div className='infoItem'>

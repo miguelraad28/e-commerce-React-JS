@@ -14,10 +14,11 @@ function App() {
         <Navbar/>
           <Routes>
             <Route path="/" element={<Home/>}></Route>
-            <Route path="/productos" element={<Productos/>}></Route>
+            <Route path="/productos" element={<Productos/>}/>
+            <Route path="/productos/categoria/:categoria" element={<Productos/>}/>
             <Route path="/productos/:id" element={<ItemDetailContainer/>}/>
-            <Route path="/contacto" element={<Contacto/>}></Route>
-            <Route path="/about" element={<About/>}></Route>
+            <Route path="/contacto" element={<Contacto/>}/>
+            <Route path="/about" element={<About/>}/>
           </Routes>
       </BrowserRouter>
         
