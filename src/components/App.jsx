@@ -4,6 +4,7 @@ import Home from "./Home";
 import Productos from "./Productos";
 import Contacto from "./Contacto";
 import About from "./About";
+import Cart from "./Cart";
 import "./App.scss"
 import ItemDetailContainer from "./Productos/ItemDetailContainer/ItemDetailContainer";
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/productos/:id" element={<ItemDetailContainer/>}/>
             <Route path="/contacto" element={<Contacto/>}/>
             <Route path="/about" element={<About/>}/>
+            <Route path="/cart" element={<Cart/>}/>
           </Routes>
       </BrowserRouter>
         

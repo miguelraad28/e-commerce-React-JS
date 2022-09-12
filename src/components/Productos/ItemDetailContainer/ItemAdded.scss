@@ -1,0 +1,22 @@
+.productoAgregado{
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    h3{
+        margin-bottom: 0;
+        text-align: center;
+    }
+    button{
+        width: 100%;
+        text-align: center;
+        border: 1px solid pink;
+        background-color: white;
+        font-size: 1.1em;
+        margin-top: 8px;
+        border-radius: 8px;
+        transition: 0.2s;
+        &:active{
+            background-color: pink;
+        }
+    }
+}
