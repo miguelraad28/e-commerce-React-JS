@@ -5,9 +5,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ItemAdded from "./ItemAdded"
 const ItemDetail = ({id, nombre, descripcion, precioUnidad, stock, img}) => {
-    const [cambiarComponente, setCambiarComponente] = useState(true);
+    const [productoAgregado, setProductoAgregado] = useState(true);
     function onAdd(count){
-        setCambiarComponente(false)
+        setProductoAgregado(false)
         if(count < 1){
             toast.error('Debes añadir al menos 1', {
                 position: "top-right",
@@ -41,7 +41,7 @@ const ItemDetail = ({id, nombre, descripcion, precioUnidad, stock, img}) => {
                     <p className='itemDescripcion'>{descripcion}</p>
                     <p>Precio: ${precioUnidad}</p>
                     <p>Disponibles: {stock}</p>
-                    {cambiarComponente ? <ItemCount stock={stock} onAdd={onAdd}/> : <ItemAdded/>}
+                    {productoAgregado ? <ItemCount stock={stock} onAdd={onAdd}/> : <ItemAdded set={setProductoAgregado}/>}
                     <ToastContainer
                     position="top-right"
                     autoClose={1700}
