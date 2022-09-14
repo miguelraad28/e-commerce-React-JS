@@ -18,6 +18,7 @@ const Navbar = () => {
                             <NavbarDropDown/>
                             <NavItem to="/contacto" text="CONTACTO"/>
                             <NavItem to="/about" text="ACERCA DE NOSOTROS"/>
+                            <NavItem to="/carrito" text="CARRITO"/>
                         </ul>
                     </div>
                 </div>

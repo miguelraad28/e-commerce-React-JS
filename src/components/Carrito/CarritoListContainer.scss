@@ -1,0 +1,26 @@
+.contenedorListCarrito{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 1em 0 1em 0;
+    .listaCarrito{
+        border: 1px solid black;
+        padding: 10px;
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 1em;
+        gap: 1em;
+        overflow-y: scroll;
+        max-height: 70vh;
+    }
+}
+.botonrosa{
+    margin: 18px;
+    button{
+        background-color: rgb(255, 173, 214);
+        border-radius: 5px;
+        border: none;
+        padding: 5px 12px;
+    }
+}

@@ -1,12 +1,15 @@
-import {React, useState} from 'react';
+import {React, useState, useContext} from 'react';
 import "./ItemDetail.scss"
 import ItemCount from './ItemCount/ItemCount';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ItemAdded from "./ItemAdded"
+import { CarritoContext } from '../../../context/CarritoContext';
 const ItemDetail = ({id, nombre, descripcion, precioUnidad, stock, img}) => {
+    const {agregarProductoCarrito} = useContext(CarritoContext)
     const [quitarItemCount, setQuitarItemCount] = useState(true);
     function onAdd(count){
+        agregarProductoCarrito(id, count)
         setQuitarItemCount(false)
         if(count < 1){
             toast.error('Debes añadir al menos 1', {

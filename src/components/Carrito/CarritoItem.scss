@@ -1,0 +1,27 @@
+.contenedorProductoEnCarrito{
+    max-height: 170px;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid pink;
+    border-radius: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    .imagenProductoEnCarrito{
+        max-width: 100%;
+        border-radius: 18px;
+        margin-right: 16px;
+    }
+    .detallesProductoEnCarrito{
+        grid-column: 2/-1;
+        margin-left: 16px;
+        h6{
+            font-weight: 400;
+        }
+        .tituloProductoEnCarrito{
+            text-transform: uppercase;
+        }
+        .descripcionProductoEnCarrito{
+            font-weight: 30;
+        }
+    }
+}

@@ -96,7 +96,6 @@
     padding: 0px 20px 5px 20px;
 }
 .offcanvas-footer{
-    min-height: 99px;
     font-size: 1.22em;
     font-family: $fuente-descripciones;
     display: flex;
@@ -106,6 +105,9 @@
     height: 100px;
     background-color: rgb(255, 241, 252);
     border-top: 1px solid black;
+    p{
+        margin-bottom: 0px;
+    }
 }
 .divTotalAPagar{
     display: flex;

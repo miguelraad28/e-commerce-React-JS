@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { products } from '../../products';
 import ItemDetail from './ItemDetail';
 import "./ItemDetailContainer.scss";
-import LoadingIcon from '../../LoadingIcon';
+import { FadeLoader } from 'react-spinners';
 
 
 const ItemDetailContainer = () => {
@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
     }, []);
     return (
         <div className='contenedorItemDetail'>
-            {item ? <ItemDetail {...item}/> : <LoadingIcon/>}
+            {item ? <ItemDetail {...item}/> : <FadeLoader color="#ffa1b1" />}
         </div>
     );
 }

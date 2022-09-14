@@ -2,7 +2,7 @@ import {React, useState, useEffect} from 'react';
 import ItemList from './ItemList';
 import "./ItemListContainer.scss"
 import {products} from "../../products"
-import LoadingIcon from '../../LoadingIcon';
+import { FadeLoader } from 'react-spinners';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
@@ -40,8 +40,8 @@ const ItemListContainer = () => {
     return (
         <div className='contenedorProductos'>
             <h1>{titulo}</h1>
-            <div className='listaProductos'>
-                {productsList ? <ItemList productsList={productsList}/> : <LoadingIcon/>}
+            <div className={productsList ? 'listaProductos' : "fadeLoader"}>
+                {productsList ? <ItemList productsList={productsList}/> : <FadeLoader color="#ffa1b1" />}
             </div>
         </div>
     );

@@ -4,9 +4,9 @@ import "./ItemAdded.scss"
 const ItemAdded = ({set}) => {
     return (
         <div className="productoAgregado">
-            <h3>Producto agregado</h3>
+            <h4>Producto agregado</h4>
             <button onClick={() => set(true)}>Modificar cantidad</button>
-            <Link to="/cart">
+            <Link to="/carrito">
                 <button>Finalizar compra</button>
             </Link>
         </div>

@@ -1,0 +1,46 @@
+import {React, createContext, useState} from 'react';
+
+const CarritoContext = createContext()
+const CarritoProvider = (props) => {
+    const [carrito, setCarrito] = useState([]);
+    // Esta sería la funcion addItem
+    const agregarProductoCarrito = (id, quantity) => {
+        // Este sería el condicional "isInCart" (true / false), si existe cambiamos cantidad, si no pasamos al else, pusheando el producto"Nuevo" que aún no existe en el array.
+        if(carrito.some(productoEnCarrito => productoEnCarrito.id === id)){
+            let productoExistente = (carrito.find(productoEnCarrito => productoEnCarrito.id === id))
+            productoExistente.quantity = quantity
+            console.log("Producto Existente", carrito)
+        }else{
+            const auxCarrito = carrito
+            let productoNuevo = {
+                id: id,
+                quantity: quantity
+            }
+            auxCarrito.push(productoNuevo)
+            setCarrito(auxCarrito)
+            console.log("Producto Nuevo", carrito)
+        }
+    }
+    // Esta sería la funcion removeItem
+    const eliminarProductoCarrito = (producto) => {
+        const auxCarrito = carrito
+        auxCarrito.splice(auxCarrito.findIndex(producto.id), 1)
+        setCarrito(auxCarrito)
+        console.log("Eliminar producto", carrito)
+    }
+    // Funcion clear() vaciamos el carrito por completo.
+    const vaciarCarrito = () => {
+        const auxCarrito = []
+        setCarrito(auxCarrito)
+        console.log("Vaciar carrito", carrito)
+    }
+    return (
+        <>
+            <CarritoContext.Provider value={{carrito, agregarProductoCarrito, eliminarProductoCarrito, vaciarCarrito}}>
+                {props.children}
+            </CarritoContext.Provider>
+        </>
+    );
+}
+
+export {CarritoContext, CarritoProvider};

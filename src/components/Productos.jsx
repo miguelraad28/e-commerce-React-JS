@@ -1,10 +1,10 @@
 import React from 'react';
 import ItemListContainer from './Productos/ItemListContainer/ItemListContainer';
 
-const Productos = ({titulo}) => {
+const Productos = () => {
     return (
         <>
-            <ItemListContainer titulo={titulo}/>
+            <ItemListContainer/>
         </>
     );
 }
