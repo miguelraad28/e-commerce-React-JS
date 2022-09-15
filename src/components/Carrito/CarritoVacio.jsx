@@ -8,9 +8,11 @@ const CarritoVacio = () => {
             <h3>
                 El carrito está vacío...
             </h3>
-            <Link to="/productos">
-                <button className="irAComprarButton"> Ir a comprar</button>
-            </Link>
+            <div className='contenedorBotonRosaCarrito'>
+                <Link to="/productos">
+                    <button className="botonRosaCarrito"> Ir a comprar</button>
+                </Link>
+            </div>
         </div>
     );
 }

@@ -3,6 +3,13 @@ import {React, createContext, useState} from 'react';
 const CarritoContext = createContext()
 const CarritoProvider = (props) => {
     const [carrito, setCarrito] = useState([]);
+    const [totalDeCarrito, setTotalDeCarrito] = useState([]);
+    function actualizarTotalDeCarrito(precioTotal){
+        const auxTotalDeCarrito = totalDeCarrito
+        auxTotalDeCarrito.push(precioTotal)
+        setTotalDeCarrito(auxTotalDeCarrito)
+        console.log(totalDeCarrito)
+    }
     // Esta sería la funcion addItem
     const agregarProductoCarrito = (id, quantity) => {
         // Este sería el condicional "isInCart" (true / false), si existe cambiamos cantidad, si no pasamos al else, pusheando el producto"Nuevo" que aún no existe en el array.
@@ -22,9 +29,9 @@ const CarritoProvider = (props) => {
         }
     }
     // Esta sería la funcion removeItem
-    const eliminarProductoCarrito = (producto) => {
+    const eliminarProductoCarrito = (id) => {
         const auxCarrito = carrito
-        auxCarrito.splice(auxCarrito.findIndex(producto.id), 1)
+        auxCarrito.splice(auxCarrito.indexOf(producto => producto.id === id), 1)
         setCarrito(auxCarrito)
         console.log("Eliminar producto", carrito)
     }
@@ -36,7 +43,7 @@ const CarritoProvider = (props) => {
     }
     return (
         <>
-            <CarritoContext.Provider value={{carrito, agregarProductoCarrito, eliminarProductoCarrito, vaciarCarrito}}>
+            <CarritoContext.Provider value={{carrito, agregarProductoCarrito, eliminarProductoCarrito, vaciarCarrito, actualizarTotalDeCarrito, totalDeCarrito}}>
                 {props.children}
             </CarritoContext.Provider>
         </>

@@ -20,7 +20,7 @@ const ItemListContainer = () => {
                 }else{
                     rej("Acceso denegado")
                 }
-            }, 2000)
+            }, 900)
         }else{
             setProductsList()
             setTitulo("TODOS NUESTROS PRODUCTOS")
@@ -30,7 +30,7 @@ const ItemListContainer = () => {
                 }else{
                     rej("Acceso denegado")
                 }
-            }, 2000)
+            }, 900)
         }
     })
     useEffect(() => {

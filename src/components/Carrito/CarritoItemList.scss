@@ -1,0 +1,21 @@
+.contenedorBotonesCarrito{
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    padding: 10px;
+}
+.botonRojoCarrito{
+    margin-right: 10px;
+    width: 100%;
+    background-color: rgb(255, 101, 129);
+    border-radius: 5px;
+    border: none;
+    padding: 5px 12px;
+}
+.botonRosaCarrito{
+    margin-left: 10px;
+    width: 100%;
+    background-color: rgb(255, 173, 214);
+    border-radius: 5px;
+    border: none;
+    padding: 5px 12px;
+}

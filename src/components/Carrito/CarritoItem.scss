@@ -1,19 +1,17 @@
 .contenedorProductoEnCarrito{
-    max-height: 170px;
     justify-content: space-between;
     padding: 10px;
     border: 1px solid pink;
     border-radius: 22px;
     display: grid;
-    grid-template-columns: repeat(3, 33%);
+    grid-template-columns: 25% 65% 10%;
     .imagenProductoEnCarrito{
         max-width: 100%;
         border-radius: 18px;
         margin-right: 16px;
     }
     .detallesProductoEnCarrito{
-        grid-column: 2/-1;
-        margin-left: 16px;
+        margin: 0px 16px 0px 16px;
         h6{
             font-weight: 400;
         }
@@ -22,6 +20,22 @@
         }
         .descripcionProductoEnCarrito{
             font-weight: 30;
+        }
+    }
+    .botonEliminar{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-right: 10px;
+        button{
+            background-color: red;
+            border: 0;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 5px;
+            &:active{
+                background-color: rgb(255, 88, 88);
+            }
         }
     }
 }
