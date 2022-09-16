@@ -4,7 +4,7 @@ import "./CarritoItem.scss"
 import { CarritoContext } from '../../context/CarritoContext';
 
 const CarritoItem = ({id, quantity}) => {
-    const {eliminarProductoCarrito, actualizarTotalDeCarrito} = useContext(CarritoContext);
+    const {eliminarProductoCarrito} = useContext(CarritoContext);
     const [productoEnCarrito, setProductoEnCarrito] = useState({});
     const getProducts = () => new Promise((res, rej) => {
         res(products)
@@ -14,13 +14,9 @@ const CarritoItem = ({id, quantity}) => {
     })
     useEffect(() => {
         getProducts()
-    }, );
+    }, []);
     const {nombre, img, precioUnidad} = productoEnCarrito
     let precioTotal = precioUnidad * quantity
-    useEffect(() => {
-        actualizarTotalDeCarrito(precioTotal)
-    }, []);
-        
     return (
         <div className="contenedorProductoEnCarrito" style={{maxWidth: '540px'}} id={id}>
             <div>

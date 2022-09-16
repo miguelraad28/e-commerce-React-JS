@@ -4,7 +4,7 @@ import { CarritoContext } from '../../context/CarritoContext';
 import { Link } from 'react-router-dom';
 import "./CarritoItemList.scss"
 const CarritoItemList = () => {
-    const {carrito, totalDeCarrito, vaciarCarrito} = useContext(CarritoContext);
+    const {carrito, vaciarCarrito} = useContext(CarritoContext);
     return (
         <div>
             {carrito.map(productoEnCarrito => <CarritoItem key={productoEnCarrito.id} {...productoEnCarrito}/>)}
@@ -15,7 +15,7 @@ const CarritoItemList = () => {
                 </Link>
             </div>
             <div className='totalDeCarrito'>
-                <p>Total a pagar: ${totalDeCarrito}</p>
+                <p>Total a pagar: ${}</p>
             </div>
         </div>
     );
