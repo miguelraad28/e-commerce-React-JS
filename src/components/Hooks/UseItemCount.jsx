@@ -12,7 +12,13 @@ const UseItemCount = (stock) => {
             setCount(count - 1)
         }
     }
-    return {sumar, restar, count};
+    function sumarCartWidget(){
+
+    }
+    function restarCartWidget(){
+        
+    }
+    return {sumar, restar, sumarCartWidget, restarCartWidget, count};
 }
 
 export default UseItemCount;

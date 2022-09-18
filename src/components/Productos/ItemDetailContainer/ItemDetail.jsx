@@ -5,9 +5,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ItemAdded from "./ItemButtons/ItemAdded"
 import { CarritoContext } from '../../../context/CarritoContext';
-const ItemDetail = ({id, nombre, descripcion, precioUnidad, stock, img}) => {
+const ItemDetail = ({producto}) => {
     const {agregarProductoCarrito} = useContext(CarritoContext)
     const [quitarItemCount, setQuitarItemCount] = useState(true);
+    const {id, nombre, descripcion, precioUnidad, stock, img} = producto
     function onAdd(count){
         if(count < 1){
             toast.error('Debes añadir al menos 1', {
@@ -20,7 +21,7 @@ const ItemDetail = ({id, nombre, descripcion, precioUnidad, stock, img}) => {
                 progress: false,
                 });
         }else{
-            agregarProductoCarrito(id, count)
+            agregarProductoCarrito(producto, count)
             setQuitarItemCount(false)
             toast.success(`${count} Producto(s) añadido(s)`, {
                 position: "top-right",

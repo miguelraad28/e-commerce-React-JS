@@ -8,16 +8,16 @@ import { FadeLoader } from 'react-spinners';
 
 const ItemDetailContainer = () => {
     const {id} = useParams()
-    const [item, setItem] = useState();
-    const getProductDetail = () => new Promise((res, rej) => {
+    const [producto, setProducto] = useState();
+    const obtenerProductDetail = () => new Promise((res, rej) => {
         setTimeout(()=> res(products.find(product => product.id === Number(id))), 900)})
     useEffect(() => {
-        getProductDetail()
-        .then(response => setItem(response))
+        obtenerProductDetail()
+        .then(response => setProducto(response))
     }, []);
     return (
         <div className='contenedorItemDetail'>
-            {item ? <ItemDetail {...item}/> : <FadeLoader color="#ffa1b1" />}
+            {producto ? <ItemDetail producto={producto}/> : <FadeLoader color="#ffa1b1" />}
         </div>
     );
 }
