@@ -6,8 +6,19 @@
     justify-content: center;
     margin-right: 15px;
     .boton-carrito{
-        background-color: transparent;
         border: 0;
+        padding: 3px 15px;
+        background-color: #ffcce9;
+        border-radius: 16px;
+
+    }
+    .cartIconContainer{
+        display: flex;
+        flex-direction: row;
+        p{
+            margin-left: 5px;
+            margin-bottom: 0;
+        }
     }
 }
 // PRODUCTO EN CARRITO

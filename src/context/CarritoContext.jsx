@@ -4,12 +4,16 @@ const CarritoContext = createContext()
 const CarritoProvider = (props) => {
     const [carrito, setCarrito] = useState([]);
     const [totalDeCarrito, setTotalDeCarrito] = useState();
+    const [cantidadDeCarrito, setCantidadDeCarrito] = useState();
+    const actualizarCantidadDeCarrito = () => {
+        const cantidadesPorProducto = carrito.map(productoEnCarrito => productoEnCarrito.cantidad)
+        const auxCantidadesPorProducto = cantidadesPorProducto.reduce((acumulador, cantidadPorProducto) => acumulador + cantidadPorProducto, 0)
+        setCantidadDeCarrito(auxCantidadesPorProducto)
+    }
     const actualizarTotalDeCarrito = () => {
-        let acumulador = 0
         const totalesPorProducto = carrito.map(productoEnCarrito => productoEnCarrito.precioTotal)
-        console.log(totalesPorProducto)
-        setTotalDeCarrito(acumulador)
-        
+        const auxTotalDeCarrito = totalesPorProducto.reduce((acumulador, totalPorProducto) => acumulador + totalPorProducto, 0)
+        setTotalDeCarrito(auxTotalDeCarrito)
     }
     // Esta sería la funcion addItem
     const agregarProductoCarrito = (producto, count) => {
@@ -35,13 +39,15 @@ const CarritoProvider = (props) => {
             console.log("Producto Nuevo", carrito)
         }
         actualizarTotalDeCarrito()
+        actualizarCantidadDeCarrito()
     }
     // Esta sería la funcion removeItem
     const eliminarProductoCarrito = (id) => {
-        const auxCarrito = [...carrito]
-        auxCarrito.splice((auxCarrito.indexOf(producto => producto.id === id)), 1)
+        const auxCarrito = carrito
+        auxCarrito.splice((auxCarrito.findIndex(producto => producto.id === id)), 1)
         setCarrito(auxCarrito)
         actualizarTotalDeCarrito()
+        actualizarCantidadDeCarrito()
         console.log("Eliminar producto", carrito)
     }
     // Funcion clear() vaciamos el carrito por completo.
@@ -49,10 +55,11 @@ const CarritoProvider = (props) => {
         const auxCarrito = []
         setCarrito(auxCarrito)
         console.log("Vaciar carrito", carrito)
+        actualizarCantidadDeCarrito()
     }
     return (
         <>
-            <CarritoContext.Provider value={{carrito, agregarProductoCarrito, eliminarProductoCarrito, vaciarCarrito, totalDeCarrito}}>
+            <CarritoContext.Provider value={{carrito, agregarProductoCarrito, eliminarProductoCarrito, vaciarCarrito, totalDeCarrito, cantidadDeCarrito}}>
                 {props.children}
             </CarritoContext.Provider>
         </>
