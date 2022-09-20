@@ -3,17 +3,16 @@ import {React, createContext, useState} from 'react';
 const CarritoContext = createContext()
 const CarritoProvider = (props) => {
     const [carrito, setCarrito] = useState([]);
-    const [totalDeCarrito, setTotalDeCarrito] = useState();
-    const [cantidadDeCarrito, setCantidadDeCarrito] = useState();
+    const [totalDeCarrito, setTotalDeCarrito] = useState(0);
+    const [cantidadDeCarrito, setCantidadDeCarrito] = useState(0);
     const actualizarCantidadDeCarrito = () => {
         const cantidadesPorProducto = carrito.map(productoEnCarrito => productoEnCarrito.cantidad)
-        const auxCantidadesPorProducto = cantidadesPorProducto.reduce((acumulador, cantidadPorProducto) => acumulador + cantidadPorProducto, 0)
-        setCantidadDeCarrito(auxCantidadesPorProducto)
+        setCantidadDeCarrito(cantidadesPorProducto.reduce((acumulador, cantidadPorProducto) => acumulador + cantidadPorProducto, 0))
     }
     const actualizarTotalDeCarrito = () => {
         const totalesPorProducto = carrito.map(productoEnCarrito => productoEnCarrito.precioTotal)
-        const auxTotalDeCarrito = totalesPorProducto.reduce((acumulador, totalPorProducto) => acumulador + totalPorProducto, 0)
-        setTotalDeCarrito(auxTotalDeCarrito)
+        //const auxTotalDeCarrito = totalesPorProducto.reduce((acumulador, totalPorProducto) => acumulador + totalPorProducto, 0)
+        setTotalDeCarrito(totalesPorProducto.reduce((acumulador, totalPorProducto) => acumulador + totalPorProducto, 0))
     }
     // Esta sería la funcion addItem
     const agregarProductoCarrito = (producto, count) => {
@@ -52,10 +51,10 @@ const CarritoProvider = (props) => {
     }
     // Funcion clear() vaciamos el carrito por completo.
     const vaciarCarrito = () => {
-        const auxCarrito = []
-        setCarrito(auxCarrito)
+        setCarrito([])
         console.log("Vaciar carrito", carrito)
-        actualizarCantidadDeCarrito()
+        setCantidadDeCarrito(0)
+        setTotalDeCarrito(0)
     }
     return (
         <>
