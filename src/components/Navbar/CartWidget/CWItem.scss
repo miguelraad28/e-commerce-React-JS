@@ -1,0 +1,58 @@
+.contenedorCWItem{
+    max-width: 540px;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid pink;
+    display: grid;
+    grid-template-columns: 25% 65% 10%;
+    .imagenCW{
+        max-width: 100%;
+        border-radius: 18px;
+        margin-right: 16px;
+    }
+    .detallesCW{
+        margin: 0px 16px;
+        .tituloCW{
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        p{
+            margin-bottom: 3px;
+        }
+        .contenedorCWBotonesYTotal{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            p{
+                margin-left: 10px;
+            }
+            button{
+                border: 0;
+                width: 30px;
+                font-weight: 500;
+            }
+            .botonRestarEnCarrito{
+                background-color: rgb(255, 79, 39);
+            }
+            .botonSumarEnCarrito{
+                background-color: rgb(88, 255, 72);
+            }
+        }
+    }
+    .botonEliminar{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-right: 10px;
+        button{
+            background-color: red;
+            border: 0;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 5px;
+            &:active{
+                background-color: rgb(255, 88, 88);
+            }
+        }
+    }
+}

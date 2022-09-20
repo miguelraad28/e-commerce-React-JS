@@ -1,5 +1,17 @@
-@import "../sass/variables.scss";
-// CARRITO DE COMPRAS E ICONO DE CUENTA
+@import "../../sass/variables.scss";
+.contenedorCWListContainer{
+    height: 100%;
+}
+.contenedorCWVacio{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    p{
+        font-weight: 400;
+        font-size: 1.5em;
+    }
+}
 .div-carrito{
     display: flex;
     flex-direction: column;
@@ -107,6 +119,8 @@
     padding: 0px 20px 5px 20px;
 }
 .offcanvas-footer{
+    padding-bottom: 15px;
+    padding-top: 8px;
     font-size: 1.22em;
     font-family: $fuente-descripciones;
     display: flex;

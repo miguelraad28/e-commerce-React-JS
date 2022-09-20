@@ -1,7 +1,7 @@
 import React from 'react';
 import NavItem from './NavItem';
 import NavbarDropDown from './NavbarDropDown';
-import CartWidget from './CartWidget';
+import CartWidget from './CartWidget/CartWidget';
 import "./Navbar.scss"
 
 const Navbar = () => {
@@ -18,7 +18,6 @@ const Navbar = () => {
                             <NavbarDropDown/>
                             <NavItem to="/contacto" text="CONTACTO"/>
                             <NavItem to="/about" text="ACERCA DE NOSOTROS"/>
-                            <NavItem to="/carrito" text="CARRITO"/>
                         </ul>
                     </div>
                 </div>

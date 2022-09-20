@@ -1,10 +1,12 @@
 import {React, useContext} from 'react';
 import "./CartWidget.scss"
-import { CarritoContext } from '../../context/CarritoContext';
+import { CarritoContext } from '../../../context/CarritoContext';
 import { Link } from 'react-router-dom';
+import CWVacio from './CWVacio';
+import CWListContainer from './CWListContainer';
 
 const CartWidget = () => {
-    const {carrito, cantidadDeCarrito} = useContext(CarritoContext);
+    const {carrito, cantidadDeCarrito, totalDeCarrito} = useContext(CarritoContext);
     return (
         <div className="div-carrito">
             <button className="boton-carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
@@ -25,11 +27,11 @@ const CartWidget = () => {
                     </h5>
                     <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close" />
                 </div>
-                {/*carrito.length > 0 ? <CartWidgetListContainer/> : <CartWidgetVacio/>*/}
+                {carrito.length > 0 ? <CWListContainer/> : <CWVacio/>}
                 <div className="offcanvas-footer">
                     <div className="divTotalAPagar">
                         <p>Total a pagar</p>
-                        <p id="idTotalAPagar">: <b>$0</b></p>
+                        <p id="idTotalAPagar">: <b>${totalDeCarrito}</b></p>
                     </div>
                     <div className="divBotonFinalizarCompra">
                         <Link to="/carrito/checkout">

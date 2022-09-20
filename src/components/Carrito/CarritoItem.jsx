@@ -1,12 +1,11 @@
 import {React, useContext} from 'react';
-import { products } from '../products';
 import "./CarritoItem.scss"
 import { CarritoContext } from '../../context/CarritoContext';
 
 const CarritoItem = ({id, nombre, precioUnidad, cantidad, precioTotal, img}) => {
     const {eliminarProductoCarrito} = useContext(CarritoContext);
     return (
-        <div className="contenedorProductoEnCarrito" style={{maxWidth: '540px'}} id={id}>
+        <div className="contenedorProductoEnCarrito" id={id}>
             <div>
                 <img className="imagenProductoEnCarrito" src={img}/>
             </div>

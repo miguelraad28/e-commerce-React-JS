@@ -1,4 +1,5 @@
 .contenedorProductoEnCarrito{
+    max-width: 540px;
     justify-content: space-between;
     padding: 10px;
     border: 1px solid pink;
@@ -18,9 +19,6 @@
         }
         .tituloProductoEnCarrito{
             text-transform: uppercase;
-        }
-        .descripcionProductoEnCarrito{
-            font-weight: 30;
         }
     }
     .botonEliminar{
