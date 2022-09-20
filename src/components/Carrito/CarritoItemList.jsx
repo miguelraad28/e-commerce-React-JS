@@ -28,7 +28,7 @@ const CarritoItemList = () => {
                 <Link to="/carrito/checkout">
                     <button className="botonRosaCarrito">Ir a pagar</button>
                 </Link>
-                <ToastContainer
+                {/*<ToastContainer
                 position="top-right"
                 autoClose={1700}
                 hideProgressBar={false}
@@ -38,7 +38,7 @@ const CarritoItemList = () => {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
-                />
+                />*/}
             </div>
             <div className='totalDeCarrito'>
                 <p>Total a pagar: ${totalDeCarrito}</p>
