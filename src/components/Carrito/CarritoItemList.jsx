@@ -3,23 +3,10 @@ import CarritoItem from "./CarritoItem.jsx"
 import { CarritoContext } from '../../context/CarritoContext';
 import { Link } from 'react-router-dom';
 import "./CarritoItemList.scss"
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 const CarritoItemList = () => {
     const {carrito, vaciarCarrito, totalDeCarrito} = useContext(CarritoContext);
-    //No logro ejecutar tanto la funcion notifyEmptyCart y vaciarCarrito traida como prop del context al mismo tiempo en el onclick en la 27º. la dejo a la espera.
-    /*const notifyEmptyCart = () => {
-        toast.warn('Carrito vaciado', {
-            position: "top-right",
-            autoClose: 1700,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
-    }*/
     return (
         <div>
             {carrito.map(productoEnCarrito => <CarritoItem key={productoEnCarrito.id} {...productoEnCarrito}/>)}
@@ -28,17 +15,6 @@ const CarritoItemList = () => {
                 <Link to="/carrito/checkout">
                     <button className="botonRosaCarrito">Ir a pagar</button>
                 </Link>
-                {/*<ToastContainer
-                position="top-right"
-                autoClose={1700}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                />*/}
             </div>
             <div className='totalDeCarrito'>
                 <p>Total a pagar: ${totalDeCarrito}</p>

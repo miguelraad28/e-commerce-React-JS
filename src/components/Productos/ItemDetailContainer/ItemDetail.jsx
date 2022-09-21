@@ -14,7 +14,7 @@ const ItemDetail = ({producto}) => {
             toast.error('Debes añadir al menos 1', {
                 position: "top-right",
                 autoClose: 1700,
-                hideProgressBar: true,
+                hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: false,
@@ -46,17 +46,6 @@ const ItemDetail = ({producto}) => {
                     <p>Precio: ${precioUnidad}</p>
                     <p>Disponibles: {stock}</p>
                     {quitarItemCount ? <ItemCount stock={stock} onAdd={onAdd}/> : <ItemAdded set={setQuitarItemCount}/>}
-                    <ToastContainer
-                    position="top-right"
-                    autoClose={1700}
-                    hideProgressBar
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                    />
                 </div>
             </div>
         </div>

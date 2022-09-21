@@ -1,3 +1,3 @@
-import { cargarDB } from "./firebase.js";
+//import { subirDB } from "./firebase.js";
 
-cargarDB()
+//subirDB()

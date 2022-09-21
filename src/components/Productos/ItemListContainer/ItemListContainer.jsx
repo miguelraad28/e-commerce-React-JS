@@ -1,47 +1,35 @@
 import {React, useState, useEffect} from 'react';
 import ItemList from './ItemList';
 import "./ItemListContainer.scss"
-import {products} from "../../products"
 import { FadeLoader } from 'react-spinners';
 import { useParams } from 'react-router-dom';
+import { getProductsList } from '../../../firebase/firebase';
+import UseLoading from '../../Hooks/UseLoading';
 
 const ItemListContainer = () => {
+    const {loading, setLoading} = UseLoading()
     const {categoria} = useParams()
     const [productsList, setProductsList] = useState();
     const [titulo, setTitulo] = useState("");
-    const getProducts = (confirmacion) => new Promise((res, rej) => {
+    async function consultarDB(){
+        setLoading(true)
+        setProductsList(await getProductsList(categoria))
+        setLoading(false)
+    }
+    useEffect(() => {
+        consultarDB()
         if(categoria){
-            setProductsList()
             let tituloCategoria = categoria.replace("-", " ")
             setTitulo(`ESTÁS EN LA CATEGORÍA ${tituloCategoria}`)
-            setTimeout(() => {
-                if(confirmacion){
-                    res(products.filter(products => products.categoria === categoria))
-                }else{
-                    rej("Acceso denegado")
-                }
-            }, 900)
         }else{
-            setProductsList()
             setTitulo("TODOS NUESTROS PRODUCTOS")
-            setTimeout(() => {
-                if(confirmacion){
-                    res(products)
-                }else{
-                    rej("Acceso denegado")
-                }
-            }, 900)
         }
-    })
-    useEffect(() => {
-        getProducts(true)
-        .then(productsList => setProductsList(productsList))
     }, [categoria]);
     return (
         <div className='contenedorProductos'>
             <h1>{titulo}</h1>
-            <div className={productsList ? 'listaProductos' : "fadeLoader"}>
-                {productsList ? <ItemList productsList={productsList}/> : <FadeLoader color="#ffa1b1" />}
+            <div className={loading ? "fadeLoader" : 'listaProductos'}>
+                {loading ?  <FadeLoader color="#ffa1b1" /> : <ItemList productsList={productsList}/>}
             </div>
         </div>
     );

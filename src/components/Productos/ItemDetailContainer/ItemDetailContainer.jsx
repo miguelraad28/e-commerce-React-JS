@@ -1,23 +1,26 @@
 import {React, useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import { products } from '../../products';
 import ItemDetail from './ItemDetail';
 import "./ItemDetailContainer.scss";
-import { FadeLoader } from 'react-spinners';
-
+import { BounceLoader } from 'react-spinners';
+import {getProductDetail} from "../../../firebase/firebase.js"
+import UseLoading from '../../Hooks/UseLoading';
 
 const ItemDetailContainer = () => {
+    const {loading, setLoading} = UseLoading()
     const {id} = useParams()
-    const [producto, setProducto] = useState();
-    const obtenerProductDetail = () => new Promise((res, rej) => {
-        setTimeout(()=> res(products.find(product => product.id === Number(id))), 900)})
+    const [producto, setProducto] = useState({});
+    async function consultarDB(id){
+        setLoading(true)
+        setProducto(await getProductDetail(id))
+        setLoading(false)
+    }
     useEffect(() => {
-        obtenerProductDetail()
-        .then(response => setProducto(response))
-    }, []);
+        consultarDB(id)
+    }, [id]);
     return (
         <div className='contenedorItemDetail'>
-            {producto ? <ItemDetail producto={producto}/> : <FadeLoader color="#ffa1b1" />}
+            {loading ? <BounceLoader color="#ffa1b1" /> :<ItemDetail producto={producto}/>}
         </div>
     );
 }

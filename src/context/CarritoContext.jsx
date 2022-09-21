@@ -1,4 +1,6 @@
 import {React, createContext, useState} from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CarritoContext = createContext()
 const CarritoProvider = (props) => {
@@ -45,6 +47,15 @@ const CarritoProvider = (props) => {
         const auxCarrito = carrito
         auxCarrito.splice((auxCarrito.findIndex(producto => producto.id === id)), 1)
         setCarrito(auxCarrito)
+        toast.error('Producto eliminado', {
+            position: "top-right",
+            autoClose: 1700,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
         actualizarTotalDeCarrito()
         actualizarCantidadDeCarrito()
         console.log("Eliminar producto", carrito)
@@ -52,6 +63,15 @@ const CarritoProvider = (props) => {
     // Funcion clear() vaciamos el carrito por completo.
     const vaciarCarrito = () => {
         setCarrito([])
+        toast.warn('Carrito vaciado', {
+            position: "top-right",
+            autoClose: 1700,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
         console.log("Vaciar carrito", carrito)
         setCantidadDeCarrito(0)
         setTotalDeCarrito(0)
@@ -60,6 +80,17 @@ const CarritoProvider = (props) => {
         <>
             <CarritoContext.Provider value={{carrito, agregarProductoCarrito, eliminarProductoCarrito, vaciarCarrito, totalDeCarrito, cantidadDeCarrito}}>
                 {props.children}
+                <ToastContainer
+                position="top-right"
+                autoClose={1700}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                />
             </CarritoContext.Provider>
         </>
     );
