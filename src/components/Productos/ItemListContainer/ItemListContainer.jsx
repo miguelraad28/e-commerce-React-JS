@@ -9,7 +9,7 @@ import UseLoading from '../../Hooks/UseLoading';
 const ItemListContainer = () => {
     const {loading, setLoading} = UseLoading()
     const {categoria} = useParams()
-    const [productsList, setProductsList] = useState();
+    const [productsList, setProductsList] = useState([]);
     const [titulo, setTitulo] = useState("");
     async function consultarDB(){
         setLoading(true)
