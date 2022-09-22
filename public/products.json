@@ -1,0 +1,106 @@
+[
+    {
+      "categoria":"mazos",
+      "nombre":"oráculo conexión con el universo box",
+      "descripcion":"La descripción iría acá, pero bueno, como voy bien atrasado con React le estoy dando más enfoque a aprender cosas nuevas por los momentos y no en añadirle descripciones a los productos xD",
+      "precioUnidad":3990,
+      "stock":5,
+      "img":"https://firebasestorage.googleapis.com/v0/b/e-commerce-a9834.appspot.com/o/universobox.jpg?alt=media&token=1aff1ae0-6fa8-43c2-8f36-870fe9a8d056"
+    },
+    {
+      "categoria":"mazos",
+      "nombre":"oráculo conexión con el universo simple",
+      "descripcion":"La descripción iría acá, pero bueno, como voy bien atrasado con React le estoy dando más enfoque a aprender cosas nuevas por los momentos y no en añadirle descripciones a los productos xD",
+      "precioUnidad":2650,
+      "stock":35,
+      "img":"https://firebasestorage.googleapis.com/v0/b/e-commerce-a9834.appspot.com/o/universosolo.jpg?alt=media&token=06d37014-2a7c-43c9-9e02-d4f1c9ee6166"
+    },
+    {
+      "categoria":"tarot",
+      "nombre":"lectura de cartas 45min",
+      "descripcion":"La descripción iría acá, pero bueno, como voy bien atrasado con React le estoy dando más enfoque a aprender cosas nuevas por los momentos y no en añadirle descripciones a los productos xD",
+      "precioUnidad":4800,
+      "stock": 10000,
+      "img":"https://firebasestorage.googleapis.com/v0/b/e-commerce-a9834.appspot.com/o/tarot.jpg?alt=media&token=9ce99c1f-1df1-4f4f-86cf-c3c8be4cd909"
+    },
+    {
+      "categoria":"limpieza-energetica",
+      "nombre":"kit personal 7 chakras",
+      "descripcion":"La descripción iría acá, pero bueno, como voy bien atrasado con React le estoy dando más enfoque a aprender cosas nuevas por los momentos y no en añadirle descripciones a los productos xD",
+      "precioUnidad":2650,
+      "stock":12,
+      "img":"https://firebasestorage.googleapis.com/v0/b/e-commerce-a9834.appspot.com/o/chakras.jpg?alt=media&token=63df7c5f-e2b2-4c47-8c7d-57eab69df4e3"
+    },
+    {
+      "categoria":"limpieza-energetica",
+      "nombre":"spry limpieza energética sandalo y champa",
+      "descripcion":"La descripción iría acá, pero bueno, como voy bien atrasado con React le estoy dando más enfoque a aprender cosas nuevas por los momentos y no en añadirle descripciones a los productos xD",
+      "precioUnidad":650,
+      "stock":16,
+      "img":"https://firebasestorage.googleapis.com/v0/b/e-commerce-a9834.appspot.com/o/sandaloychampa.jpg?alt=media&token=6223fb43-6ad1-405f-a352-c9c997272cf5"
+    },
+    {
+      "categoria":"limpieza-energetica",
+      "nombre":"spry limpieza energética de descarga",
+      "descripcion":"La descripción iría acá, pero bueno, como voy bien atrasado con React le estoy dando más enfoque a aprender cosas nuevas por los momentos y no en añadirle descripciones a los productos xD",
+      "precioUnidad":650,
+      "stock":11,
+      "img":"https://firebasestorage.googleapis.com/v0/b/e-commerce-a9834.appspot.com/o/limpiezaspry.jpg?alt=media&token=c5596087-abdf-46d9-81e0-729a14d35da0"
+    },
+    {
+      "categoria":"limpieza-energetica",
+      "nombre":"spry limpieza energética ruda y romero",
+      "descripcion":"La descripción iría acá, pero bueno, como voy bien atrasado con React le estoy dando más enfoque a aprender cosas nuevas por los momentos y no en añadirle descripciones a los productos xD",
+      "precioUnidad":690,
+      "stock":19,
+      "img":"https://firebasestorage.googleapis.com/v0/b/e-commerce-a9834.appspot.com/o/rudayromero.jpg?alt=media&token=867e0ebc-d5a1-49bc-ade1-b4d92be79ee8"
+    },
+    {
+      "categoria":"limpieza-energetica",
+      "nombre":"spry limpieza energética abundancia y fortuna",
+      "descripcion":"La descripción iría acá, pero bueno, como voy bien atrasado con React le estoy dando más enfoque a aprender cosas nuevas por los momentos y no en añadirle descripciones a los productos xD",
+      "precioUnidad":780,
+      "stock":25,
+      "img":"https://firebasestorage.googleapis.com/v0/b/e-commerce-a9834.appspot.com/o/abundanciayfortuna.jpg?alt=media&token=000e94b1-11b6-4d55-9ffe-d5cba1b6aa26"
+    },
+    {
+      "categoria":"velas",
+      "nombre":"vela de soja de la abundancia y fortuna",
+      "descripcion":"La descripción iría acá, pero bueno, como voy bien atrasado con React le estoy dando más enfoque a aprender cosas nuevas por los momentos y no en añadirle descripciones a los productos xD",
+      "precioUnidad":890,
+      "stock":2,
+      "img":"https://firebasestorage.googleapis.com/v0/b/e-commerce-a9834.appspot.com/o/abundancia.jpg?alt=media&token=0837a2c0-5fd9-464f-8711-83113080c978"
+    },
+    {
+      "categoria":"velas",
+      "nombre":"vela de soja del amor",
+      "descripcion":"La descripción iría acá, pero bueno, como voy bien atrasado con React le estoy dando más enfoque a aprender cosas nuevas por los momentos y no en añadirle descripciones a los productos xD",
+      "precioUnidad":890,
+      "stock":22,
+      "img":"https://firebasestorage.googleapis.com/v0/b/e-commerce-a9834.appspot.com/o/amor.jpg?alt=media&token=cde1054d-682c-4e2f-a173-66f88b80afde"
+    },
+    {
+      "categoria":"velas",
+      "nombre":"vela de soja \"buda\"",
+      "descripcion":"La descripción iría acá, pero bueno, como voy bien atrasado con React le estoy dando más enfoque a aprender cosas nuevas por los momentos y no en añadirle descripciones a los productos xD",
+      "precioUnidad":950,
+      "stock":20,
+      "img":"https://firebasestorage.googleapis.com/v0/b/e-commerce-a9834.appspot.com/o/buda.jpg?alt=media&token=f6ea8e1e-a0f4-4b9b-ac9d-03da47e834c9"
+    },
+    {
+      "categoria":"velas",
+      "nombre":"vela de soja de limpieza energética",
+      "descripcion":"La descripción iría acá, pero bueno, como voy bien atrasado con React le estoy dando más enfoque a aprender cosas nuevas por los momentos y no en añadirle descripciones a los productos xD",
+      "precioUnidad":920,
+      "stock":20,
+      "img":"https://firebasestorage.googleapis.com/v0/b/e-commerce-a9834.appspot.com/o/limpieza.jpg?alt=media&token=56acd831-c15b-4958-be96-abe3f7b2f49d"
+    },
+    {
+      "categoria":"velas",
+      "nombre":"vela de soja de la seducción",
+      "descripcion":"La descripción iría acá, pero bueno, como voy bien atrasado con React le estoy dando más enfoque a aprender cosas nuevas por los momentos y no en añadirle descripciones a los productos xD",
+      "precioUnidad":990,
+      "stock":9,
+      "img":"https://firebasestorage.googleapis.com/v0/b/e-commerce-a9834.appspot.com/o/seduccion.jpg?alt=media&token=b9a621f9-b954-4024-8be9-9f2a3a83d4fe"
+    }
+  ]
