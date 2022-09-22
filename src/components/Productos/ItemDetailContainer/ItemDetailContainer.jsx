@@ -10,13 +10,13 @@ const ItemDetailContainer = () => {
     const {loading, setLoading} = UseLoading()
     const {id} = useParams()
     const [producto, setProducto] = useState({});
-    async function consultarDB(id){
+    async function consultarDB(){
         setLoading(true)
         setProducto(await getProductDetail(id))
         setLoading(false)
     }
     useEffect(() => {
-        consultarDB(id)
+        consultarDB()
     }, [id]);
     return (
         <div className='contenedorItemDetail'>
