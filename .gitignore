@@ -26,5 +26,5 @@ yarn-error.log*
 .env
 
 #products backup
-/products.json
+/public/products.json
 /public/images
