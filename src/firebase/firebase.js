@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {collection, getFirestore, addDoc, getDocs, getDoc, doc, query, where} from "firebase/firestore";
+import {collection, getFirestore, addDoc, getDocs, getDoc, doc, query, where, setDoc} from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: `${process.env.REACT_APP_APIKEY}`,
@@ -31,12 +31,10 @@ const getProductsList = async(categoria) =>{
         if(categoria){
             const document = await getDocs(query(collection(db,"productos"),where("categoria", "==", categoria)))
             const result = document.docs.map(doc => doc ={id: doc.id, ...doc.data()})
-            console.log("categoria", categoria, result)
             return(result)
         }else{
             const document = await getDocs(collection(db,"productos"))
             const result = document.docs.map(doc => doc ={id: doc.id, ...doc.data()})
-            console.log("todos los productos",result)
             return(result)
         }
     }
@@ -48,10 +46,44 @@ const getProductDetail = async(productId) =>{
     try {
         const response = await getDoc(doc(db, "productos", productId))
         const result = {id: response.id, ...response.data()}
-        console.log("detalle producto", result)
+        console.log(result)
         return(result)
     } catch (error) {
         console.log(error)
     }
 }
-export {db, app, subirDB, getProductsList, getProductDetail}
+const crearOrdenDeCompra = async(data) =>{
+    try {
+        const orden = await addDoc(collection(db, "ordenesDeCompra"), data)
+        return(orden.id)
+    } catch (error) {
+        console.log(error)
+    }
+}
+const updateStock = async (productosComprados) => {
+    try {
+        await productosComprados.forEach(async (product) => {
+            const productId = product.id
+            const cantidadComprada = product.cantidad
+            const docRef = await doc(db, "productos", productId)
+            const docRefForStock = await getDoc(docRef)
+            const result = {...docRefForStock.data()}
+            console.log(result)
+            const stockActual = result.stock
+            const nuevoStock = stockActual - cantidadComprada
+            await setDoc(docRef, {stock: nuevoStock}, {merge:true})
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+/*
+const generarOrden = async (data) => {
+        const col = collection(db, "ventas")
+        let size = await getDocs(col).then(res => {let resultado = res.size 
+            return resultado})
+        const numeroDeOrden = size + 1
+        const venta = await setDoc(doc(db, "ventas", numeroDeOrden.toString()), data)
+    }
+    */
+export {db, app, subirDB, getProductsList, getProductDetail, crearOrdenDeCompra, updateStock}

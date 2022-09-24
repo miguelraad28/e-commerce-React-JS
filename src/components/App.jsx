@@ -6,7 +6,7 @@ import Productos from "./Productos";
 import Contacto from "./Contacto";
 import About from "./About";
 import Carrito from "./Carrito";
-import "./App.scss"
+import Checkout from "./CarritoCheckout/Checkout";
 import ItemDetailContainer from "./Productos/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
               <Route path="/contacto" element={<Contacto/>}/>
               <Route path="/about" element={<About/>}/>
               <Route path="/carrito" element={<Carrito/>}/>
+              <Route path="/carrito/checkout" element={<Checkout/>}/>
             </Routes>
         </BrowserRouter>
     </>

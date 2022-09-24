@@ -4,11 +4,10 @@ import "./ItemListContainer.scss"
 import { FadeLoader } from 'react-spinners';
 import { useParams } from 'react-router-dom';
 import { getProductsList } from '../../../firebase/firebase';
-import UseLoading from '../../Hooks/UseLoading';
 
 const ItemListContainer = () => {
-    const {loading, setLoading} = UseLoading()
     const {categoria} = useParams()
+    const [loading, setLoading] = useState();
     const [productsList, setProductsList] = useState([]);
     const [titulo, setTitulo] = useState("");
     async function consultarDB(){

@@ -78,7 +78,7 @@ const CarritoProvider = (props) => {
     }
     return (
         <>
-            <CarritoContext.Provider value={{carrito, agregarProductoCarrito, eliminarProductoCarrito, vaciarCarrito, totalDeCarrito, cantidadDeCarrito}}>
+            <CarritoContext.Provider value={{carrito, setCarrito, agregarProductoCarrito, eliminarProductoCarrito, vaciarCarrito, totalDeCarrito, cantidadDeCarrito}}>
                 {props.children}
                 <ToastContainer
                 position="top-right"

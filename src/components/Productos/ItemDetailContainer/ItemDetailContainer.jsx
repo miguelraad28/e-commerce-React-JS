@@ -4,12 +4,11 @@ import ItemDetail from './ItemDetail';
 import "./ItemDetailContainer.scss";
 import { BounceLoader } from 'react-spinners';
 import {getProductDetail} from "../../../firebase/firebase.js"
-import UseLoading from '../../Hooks/UseLoading';
 
 const ItemDetailContainer = () => {
-    const {loading, setLoading} = UseLoading()
     const {id} = useParams()
     const [producto, setProducto] = useState({});
+    const [loading, setLoading] = useState();
     async function consultarDB(){
         setLoading(true)
         setProducto(await getProductDetail(id))
