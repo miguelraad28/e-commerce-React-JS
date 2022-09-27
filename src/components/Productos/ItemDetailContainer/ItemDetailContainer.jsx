@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
     }, [id]);
     return (
         <div className='contenedorItemDetail'>
-            {loading ? <BounceLoader color="#ffa1b1" /> :<ItemDetail producto={producto}/>}
+            {loading? <BounceLoader color="#ffa1b1" /> : <ItemDetail producto={producto}/>}
         </div>
     );
 }
