@@ -7,6 +7,7 @@ const Item = ({producto}) => {
     return (
         <div className='item' id={id}>
             <div className='infoItem'>
+                {stock > 0 ? null : <div className="productoAgotado">Agotado</div>}
                 <img src={img}/>
                 <h2>{nombre}</h2>
                 <p>Precio: ${precioUnidad}</p>

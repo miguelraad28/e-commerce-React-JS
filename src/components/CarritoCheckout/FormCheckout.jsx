@@ -18,6 +18,7 @@ const FormCheckout = () => {
             ...buyer,
             [e.target.name] : e.target.value
         }))
+        console.log(buyer)
     }
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -52,6 +53,7 @@ const FormCheckout = () => {
                 progress: undefined,
             });
         }else{
+            console.log(buyer)
             delete buyer.confirmarEmail
             const productosComprados = carrito.map(e=>{return{id:e.id, nombre:e.nombre, cantidad:e.cantidad, precioTotal:e.precioTotal}})
             const fechaCompra = new Date()
@@ -70,6 +72,7 @@ const FormCheckout = () => {
             })
             updateStock(productosComprados)
             setCarrito([])
+            console.log(buyer)
         }
     }
     return (

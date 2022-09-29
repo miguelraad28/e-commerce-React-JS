@@ -12,11 +12,7 @@ const CWItem = ({id, nombre, precioUnidad, cantidad, precioTotal, img}) => {
             <div className="detallesCW">
                 <p className="tituloCW">{nombre}</p>
                 <p>Cantidad: {cantidad} - Precio: ${precioUnidad}</p>
-                <div className='contenedorCWBotonesYTotal'>
-                    <button className='botonRestarEnCarrito'>-</button>
-                    <button className='botonSumarEnCarrito'>+</button>
                     <p>Total: ${precioTotal}</p>
-                </div>
             </div>
             <div className='botonEliminar'>
                 <button onClick={() => eliminarProductoCarrito(id)}>X</button>

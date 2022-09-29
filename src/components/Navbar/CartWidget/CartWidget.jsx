@@ -34,7 +34,7 @@ const CartWidget = () => {
                         <p id="idTotalAPagar">: <b>${totalDeCarrito}</b></p>
                     </div>
                     <div className="divBotonFinalizarCompra">
-                        <Link to="/carrito/checkout">
+                        <Link to="/checkout">
                             <button disabled={carrito.length > 0 ? null : true} className="botonRosaCarrito">Finalizar Compra</button>
                         </Link>
                     </div>

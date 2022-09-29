@@ -12,7 +12,7 @@ const CarritoItemList = () => {
             {carrito.map(productoEnCarrito => <CarritoItem key={productoEnCarrito.id} {...productoEnCarrito}/>)}
             <div className='contenedorBotonesCarrito'>
                 <button className="botonRojoCarrito" onClick={vaciarCarrito}>Vaciar carrito</button>
-                <Link to="/carrito/checkout">
+                <Link to="/checkout">
                     <button className="botonRosaCarrito">Ir a pagar</button>
                 </Link>
             </div>

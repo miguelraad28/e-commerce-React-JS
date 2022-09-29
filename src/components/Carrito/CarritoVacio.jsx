@@ -9,7 +9,7 @@ const CarritoVacio = () => {
                 El carrito está vacío...
             </h3>
             <div className='contenedorBotonRosaCarrito'>
-                <Link to="/productos">
+                <Link to="/">
                     <button className="botonRosaCarrito"> Ir a comprar</button>
                 </Link>
             </div>

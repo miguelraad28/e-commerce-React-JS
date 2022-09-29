@@ -46,7 +46,6 @@ const getProductDetail = async(productId) =>{
     try {
         const response = await getDoc(doc(db, "productos", productId))
         const result = {id: response.id, ...response.data()}
-        console.log(result)
         return(result)
     } catch (error) {
         console.log(error)
@@ -68,7 +67,6 @@ const updateStock = async (productosComprados) => {
             const docRef = await doc(db, "productos", productId)
             const docRefForStock = await getDoc(docRef)
             const result = {...docRefForStock.data()}
-            console.log(result)
             const stockActual = result.stock
             const nuevoStock = stockActual - cantidadComprada
             await setDoc(docRef, {stock: nuevoStock}, {merge:true})
@@ -77,13 +75,4 @@ const updateStock = async (productosComprados) => {
         console.log(error)
     }
 }
-/*
-const generarOrden = async (data) => {
-        const col = collection(db, "ventas")
-        let size = await getDocs(col).then(res => {let resultado = res.size 
-            return resultado})
-        const numeroDeOrden = size + 1
-        const venta = await setDoc(doc(db, "ventas", numeroDeOrden.toString()), data)
-    }
-    */
 export {db, app, subirDB, getProductsList, getProductDetail, crearOrdenDeCompra, updateStock}

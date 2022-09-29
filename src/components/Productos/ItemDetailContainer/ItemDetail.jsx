@@ -36,7 +36,7 @@ const ItemDetail = ({producto}) => {
     }
     return (
         <div className='itemDetailGrid' id={id}>
-            <div className='divImg'>
+            <div className="divImg">
                 <img src={img}/>
             </div>
             <div className='divDetailsAndButton'>
@@ -45,7 +45,7 @@ const ItemDetail = ({producto}) => {
                     <p className='itemDescripcion'>{descripcion}</p>
                     <p>Precio: ${precioUnidad}</p>
                     <p>Disponibles: {stock}</p>
-                    {quitarItemCount ? <ItemCount stock={stock} onAdd={onAdd}/> : <ItemAdded set={setQuitarItemCount}/>}
+                    {quitarItemCount ? (stock > 0 ? <ItemCount stock={stock} onAdd={onAdd}/> : <h3>¡Producto agotado!</h3>) : <ItemAdded set={setQuitarItemCount}/>}
                 </div>
             </div>
         </div>

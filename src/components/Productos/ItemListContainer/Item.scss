@@ -5,6 +5,15 @@
     padding: 10px;
     border: 2px solid pink;
     border-radius: 12px;
+    .productoAgotado{
+        font-weight: 500;
+        font-style: italic;
+        position: absolute;
+        padding: 0px 20px 2px;
+        border-top-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        background-color: rgb(255, 115, 143);
+    }
     img{
         max-width: 100%;
         height: auto;

@@ -13,7 +13,6 @@ const CarritoProvider = (props) => {
     }
     const actualizarTotalDeCarrito = () => {
         const totalesPorProducto = carrito.map(productoEnCarrito => productoEnCarrito.precioTotal)
-        //const auxTotalDeCarrito = totalesPorProducto.reduce((acumulador, totalPorProducto) => acumulador + totalPorProducto, 0)
         setTotalDeCarrito(totalesPorProducto.reduce((acumulador, totalPorProducto) => acumulador + totalPorProducto, 0))
     }
     // Esta sería la funcion addItem
@@ -24,7 +23,6 @@ const CarritoProvider = (props) => {
             let productoExistente = (carrito.find(productoEnCarrito => productoEnCarrito.id === id))
             productoExistente.cantidad = count
             productoExistente.precioTotal = productoExistente.precioUnidad * count
-            console.log("Producto Existente", carrito)
         }else{
             const auxCarrito = carrito
             let productoNuevo = {
@@ -37,7 +35,6 @@ const CarritoProvider = (props) => {
             }
             auxCarrito.push(productoNuevo)
             setCarrito(auxCarrito)
-            console.log("Producto Nuevo", carrito)
         }
         actualizarTotalDeCarrito()
         actualizarCantidadDeCarrito()
@@ -58,7 +55,6 @@ const CarritoProvider = (props) => {
         });
         actualizarTotalDeCarrito()
         actualizarCantidadDeCarrito()
-        console.log("Eliminar producto", carrito)
     }
     // Funcion clear() vaciamos el carrito por completo.
     const vaciarCarrito = () => {
@@ -72,7 +68,6 @@ const CarritoProvider = (props) => {
             draggable: true,
             progress: undefined,
         });
-        console.log("Vaciar carrito", carrito)
         setCantidadDeCarrito(0)
         setTotalDeCarrito(0)
     }
