@@ -5,10 +5,15 @@
     padding: 10px;
     border: 2px solid pink;
     border-radius: 12px;
+    .infoItem{
+        position: relative;
+        z-index: -2;
+    }
     .productoAgotado{
         font-weight: 500;
         font-style: italic;
         position: absolute;
+    
         padding: 0px 20px 2px;
         border-top-left-radius: 12px;
         border-bottom-right-radius: 12px;

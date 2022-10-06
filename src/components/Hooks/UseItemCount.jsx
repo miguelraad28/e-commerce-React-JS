@@ -1,5 +1,6 @@
 import {React, useState} from 'react';
 
+//custom hook para aumentar o disminuir la cantidad a agregar al carrito según disponibilidad de stock
 const UseItemCount = (stock) => {
     const [count, setCount] = useState(1)
     function sumar(){

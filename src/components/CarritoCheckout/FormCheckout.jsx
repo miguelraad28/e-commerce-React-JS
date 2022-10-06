@@ -72,7 +72,7 @@ const FormCheckout = () => {
             })
             updateStock(productosComprados)
             setCarrito([])
-            console.log(buyer)
+            localStorage.removeItem("carrito");
         }
     }
     return (

@@ -8,7 +8,7 @@ import CWListContainer from './CWListContainer';
 const CartWidget = () => {
     const {carrito, cantidadDeCarrito, totalDeCarrito} = useContext(CarritoContext);
     return (
-        <div className="div-carrito">
+        <div className="divCarrito">
             <button className="boton-carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 <div className="cartIconContainer">
                     <svg xmlns="http://www.w3.org/2000/svg" width={25} height={25} className="bi bi-cart4" viewBox="0 0 18 18">
@@ -34,6 +34,7 @@ const CartWidget = () => {
                         <p id="idTotalAPagar">: <b>${totalDeCarrito}</b></p>
                     </div>
                     <div className="divBotonFinalizarCompra">
+                        {/* Boton lleva a /checkout para finalizar compra. Ternario, si carrito esta vacío lo deshabilita */}
                         <Link to="/checkout">
                             <button disabled={carrito.length > 0 ? null : true} className="botonRosaCarrito">Finalizar Compra</button>
                         </Link>

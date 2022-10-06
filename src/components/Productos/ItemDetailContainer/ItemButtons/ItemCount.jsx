@@ -2,6 +2,7 @@ import React from 'react';
 import UseItemCount from '../../../Hooks/UseItemCount';
 import "./ItemCount.scss"
 const ItemCount = ({stock, onAdd}) => {
+    //Desestructuracion del customHook
     const {sumar, restar, count} = UseItemCount(stock)
     return (
         <div className='divBotonesAgregar'>
