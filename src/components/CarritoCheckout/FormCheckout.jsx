@@ -4,6 +4,7 @@ import { crearOrdenDeCompra, updateStock } from '../../firebase/firebase';
 import "./FormCheckout.scss"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2'
 
 const FormCheckout = () => {
     const {carrito, totalDeCarrito, setCarrito} = useContext(CarritoContext);
@@ -18,7 +19,6 @@ const FormCheckout = () => {
             ...buyer,
             [e.target.name] : e.target.value
         }))
-        console.log(buyer)
     }
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -53,26 +53,25 @@ const FormCheckout = () => {
                 progress: undefined,
             });
         }else{
-            console.log(buyer)
             delete buyer.confirmarEmail
             const productosComprados = carrito.map(e=>{return{id:e.id, nombre:e.nombre, cantidad:e.cantidad, precioTotal:e.precioTotal}})
             const fechaCompra = new Date()
             const totalDeCompra = totalDeCarrito
             const data = {buyer, productosComprados, fechaCompra, totalDeCompra}
             crearOrdenDeCompra(data).then(ordenId => {
-                toast.success(`Compra finalizada! El código de tu compra es ${ordenId}. También será enviado a tu mail: ${buyer.email}`, {
-                    position: "top-center",
-                    autoClose: false,
-                    hideProgressBar: true,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    });
+                Swal.fire({
+                    icon: "success",
+                    title: "¡Compra exitosa!",
+                    text: `Su ID de compra es ${ordenId}. El detalle será enviado a ${email}`
+                })
             })
             updateStock(productosComprados)
             setCarrito([])
-            localStorage.removeItem("carrito");
+            setBuyer({
+                nombre:"",
+                telefono:"",
+                email:"",
+            })
         }
     }
     return (
